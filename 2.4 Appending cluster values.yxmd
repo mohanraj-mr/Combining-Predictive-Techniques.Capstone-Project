@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.1">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="66" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">F:\Class Notes\UDACITY\p7\d2_clustdiag\cluster_pred.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>cluster_pred.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Store" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="Age0to9" source="R-DATA:" type="Double" />
+            <Field name="Age10to17" source="R-DATA:" type="Double" />
+            <Field name="Age18to24" source="R-DATA:" type="Double" />
+            <Field name="Age25to29" source="R-DATA:" type="Double" />
+            <Field name="Age30to39" source="R-DATA:" type="Double" />
+            <Field name="Age40to49" source="R-DATA:" type="Double" />
+            <Field name="Age50to64" source="R-DATA:" type="Double" />
+            <Field name="Age65Plus" source="R-DATA:" type="Double" />
+            <Field name="EdLTHS" source="R-DATA:" type="Double" />
+            <Field name="EdHSGrad" source="R-DATA:" type="Double" />
+            <Field name="EdSomeCol" source="R-DATA:" type="Double" />
+            <Field name="EdAssociate" source="R-DATA:" type="Double" />
+            <Field name="EdBachelor" source="R-DATA:" type="Double" />
+            <Field name="EdMaster" source="R-DATA:" type="Double" />
+            <Field name="EdProfSchl" source="R-DATA:" type="Double" />
+            <Field name="EdDoctorate" source="R-DATA:" type="Double" />
+            <Field name="HHSz1Per" source="R-DATA:" type="Double" />
+            <Field name="HHSz2Per" source="R-DATA:" type="Double" />
+            <Field name="HHSz3Per" source="R-DATA:" type="Double" />
+            <Field name="HHSz4Per" source="R-DATA:" type="Double" />
+            <Field name="HHSz5PlusPer" source="R-DATA:" type="Double" />
+            <Field name="HHIncU25K" source="R-DATA:" type="Double" />
+            <Field name="HHInc25Kto50K" source="R-DATA:" type="Double" />
+            <Field name="HHInc50Kto75K" source="R-DATA:" type="Double" />
+            <Field name="HHInc75Kto100K" source="R-DATA:" type="Double" />
+            <Field name="HHInc100Kto150K" source="R-DATA:" type="Double" />
+            <Field name="HHInc150Kto250K" source="R-DATA:" type="Double" />
+            <Field name="HHInc250KPlus" source="R-DATA:" type="Double" />
+            <Field name="PopAsian" source="R-DATA:" type="Double" />
+            <Field name="PopBlack" source="R-DATA:" type="Double" />
+            <Field name="PopHispanic" source="R-DATA:" type="Double" />
+            <Field name="PopMulti" source="R-DATA:" type="Double" />
+            <Field name="PopNativeAmer" source="R-DATA:" type="Double" />
+            <Field name="PopOther" source="R-DATA:" type="Double" />
+            <Field name="PopPacIsl" source="R-DATA:" type="Double" />
+            <Field name="PopWhite" source="R-DATA:" type="Double" />
+            <Field name="HVal0to100K" source="R-DATA:" type="Double" />
+            <Field name="HVal100Kto200K" source="R-DATA:" type="Double" />
+            <Field name="HVal200Kto300K" source="R-DATA:" type="Double" />
+            <Field name="HVal300Kto400K" source="R-DATA:" type="Double" />
+            <Field name="HVal400Kto500K" source="R-DATA:" type="Double" />
+            <Field name="HVal500Kto750K" source="R-DATA:" type="Double" />
+            <Field name="HVal750KPlus" source="R-DATA:" type="Double" />
+            <Field name="PopDens" source="R-DATA:" type="Double" />
+            <Field name="Pred_1" source="R-DATA:" type="Double" />
+            <Field name="Pred_2" source="R-DATA:" type="Double" />
+            <Field name="Pred_3" source="R-DATA:" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="162" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [Pred_1]&gt;[Pred_2] and [Pred_1]&gt;[Pred_3] THEN &quot;1&quot; ELSEIF [Pred_2]&gt;[Pred_1] and [Pred_2]&gt;[Pred_3] THEN '2' ELSE '3' ENDIF" field="Cluster_Predicted" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Cluster_Predicted = IF [Pred_1]&gt;[Pred_2] and [Pred_1]&gt;[Pred_3] THEN "1" ELSEIF [...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="258" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\MOHANR~1\AppData\Local\Temp\Engine_25520_a38ad07c7b2e41fd87c57ee0cb2b080f_\Engine_7700_b3f13c751ce246c0ad9e627e6241f552_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="318" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Store" action="GroupBy" rename="Store" />
+            <SummarizeField field="Cluster_Predicted" action="First" rename="First_Cluster_Predicted" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="414" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\MOHANR~1\AppData\Local\Temp\Engine_25520_a38ad07c7b2e41fd87c57ee0cb2b080f_\Engine_7700_dc1298ce8ae84582b655ff5ed400548d_.yxdb</TempFile>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="366" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">F:\Class Notes\UDACITY\p7\d2_clustdiag\clustered new.csv</File>
+          <Passwords />
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>clustered new.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Appending cluster values</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
